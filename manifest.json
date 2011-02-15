@@ -1,0 +1,17 @@
+{
+	"name": "Too Long; Didn't Read",
+	"version": "1.0",
+	"description": "",
+	"background_page": "background.html",
+	"page_action": 
+	{
+		"default_icon": "tldr_16x16.png",
+		"default_title": "Too Long, Didn't Read",
+		"default_popup": "popup.html"
+	},
+	"permissions": 
+	[
+		"tabs",
+		"http://*/"
+	]
+}
