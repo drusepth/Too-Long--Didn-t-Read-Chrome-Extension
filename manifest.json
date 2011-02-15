@@ -3,7 +3,7 @@
 	"version": "1.0",
 	"description": "",
 	"background_page": "background.html",
-	"page_action": 
+	"browser_action": 
 	{
 		"default_icon": "tldr_16x16.png",
 		"default_title": "Too Long, Didn't Read",
@@ -12,6 +12,6 @@
 	"permissions": 
 	[
 		"tabs",
-		"http://*/"
+		"http://www.too-long-didnt-read.com/"
 	]
 }

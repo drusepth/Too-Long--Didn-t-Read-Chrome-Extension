@@ -2,21 +2,12 @@ var ajax_transport = new XMLHttpRequest();
 var tabID;
 var pageURL
 
-function checkForSummary(tabId, changeInfo, tab) 
-{
-	// todo: build in local cache of recent/commonly visited sites
-	//       to minimize number of requests sent out to tldr
-	
-	tabID = tabId;
-	pageURL = tab.url;
-	
-	request("http://www.too-long-didnt-read.com/api/summaries?url=" + pageURL, process_background);
-};
-
 function getSummary(url)
 {
-	var pageURL = chrome.extension.getBackgroundPage().pageURL;
-	request("http://www.too-long-didnt-read.com/api/summaries?url=" + pageURL, process_popup);
+	chrome.tabs.getSelected(null, function(tab) 
+	{
+		request("http://www.too-long-didnt-read.com/api/summaries?url=" + tab.url, process_popup);
+	});
 }
 
 function request(url, handler)
