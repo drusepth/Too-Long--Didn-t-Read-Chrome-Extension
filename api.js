@@ -1,7 +1,5 @@
 var ajax_transport = new XMLHttpRequest();
-var tabID;
-var pageURL
-
+alert(4);
 function getSummary(url)
 {
 	chrome.tabs.getSelected(null, function(tab) 
@@ -53,6 +51,21 @@ function process_popup()
 		// Add container to body
 		document.body.appendChild(container);
 	}
+	
+	// Add your own summary
+	var container = document.createElement('div');
+	container.setAttribute('class', 'box');
+	
+	container.innerHTML = "";
+	container.innerHTML += "<h3>Submit your own summary:</h3>";
+	container.innerHTML += "<form method='post'>";
+	container.innerHTML += "	<textarea name='summary[content]' value='' rows='3' cols='40'></textarea>";
+	container.innerHTML += "	<input type='hidden' name='webpage[url]' id='url' value='' />";
+	container.innerHTML += "	<input type='hidden' name='summary[author]' value='Anonymous' />";
+	container.innerHTML += "	<input type='submit' value='Add' />";
+	container.innerHTML += "</form>";
+	
+	document.body.appendChild(container);
 }
 
 function process_background()
