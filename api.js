@@ -67,6 +67,7 @@ function process_popup()
 	// Add your own summary
 	var container = document.createElement('div');
 	container.setAttribute('class', 'box');
+	container.setAttribute('id', 'add_box');
 	
 	container.innerHTML = "";
 	container.innerHTML += "<h1>Submit your own summary:</h1>";
@@ -90,6 +91,8 @@ function submit_summary()
 	var data = "summary[content]=" + encodeURIComponent(summary)
 		+ "&webpage[url]=" + encodeURIComponent(pageURL)
 		+ "&summary[author]=" + encodeURIComponent(author);
+		
+	document.getElementById('add_box').style.display = 'none';
 		
 	post("http://www.too-long-didnt-read.com/api/summaries", data);
 }
