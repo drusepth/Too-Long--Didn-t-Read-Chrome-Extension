@@ -1,36 +1,31 @@
-*
-{
+* {
 	margin: 0px;
 	padding: 0px;
 }
 
-.about
-{
+.about {
 	text-align: right;
-	
 	font-size: 10px;
 }
 
-body
-{
+body {
 	width: 380px;
-	
 	padding: 10px;
-	
 	overflow: auto;
 }
 
-.box
-{
+.box {
 	margin-bottom: 5px;
 	border-bottom: 3px solid #dedede;
 	padding: 5px;
-	
 	border: 1px dotted #dedede;
 }
 
-h1
-{
+#loading_box {
+  text-align: center;
+}
+
+h1 {
 	text-align: center;
 	font-size: 14px;
 	border-bottom: 1px solid #dedede;
@@ -38,18 +33,25 @@ h1
 	margin-bottom: 5px;
 }
 
-input
-{
-	display: block;
-	
-	width: 100%;
+#add_box {
+  text-align: center;
 }
 
-textarea
-{
+input {
 	display: block;
 	margin-bottom: 5px;
-	
-	width: 100%;
+	width: 98%;
+	padding: 2px;
+}
+
+textarea {
+	display: block;
+	margin-bottom: 5px;
+	padding: 2px;
+	width: 98%;
 	height: 52px;
+}
+
+#summaries {
+  margin-bottom:10px;
 }

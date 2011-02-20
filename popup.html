@@ -1,15 +1,34 @@
+<!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script type="text/javascript" src="api.js"></script>
-<script type="text/javascript">
-	getSummary(document.location);
-</script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> 
+  <script type="text/javascript" src="api.js"></script>
+  <script type="text/javascript">
+    loadAndDisplaySummaries();//(document.location);
+    $(function(){
+      $("#summary_author").val(getCookie("summary_author"));
+    });
+  </script>
 </head>
 <body>
-<h1>Too Long; Didn't Read</h1>
-<div class="box" style="text-align: center" id="loading">
-	<img src="loading.gif" />
-</div>
+
+  <h1><a href="http://www.too-long-didnt-read.com/" target="_blank">Too Long; Didn't Read</a></h1>
+  <div id="loading_box" class="box">
+    <img src="loading.gif" alt="" />
+  </div>
+  
+  <div id="summaries">
+  </div>
+
+  <div id="add_box" class="box">
+    <h1>Submit your own summary:</h1>
+    <form>
+      <textarea name="summary[content]" id="summary_content" placeholder="Your summary..."></textarea>
+      <input type="text" name="summary[author]" id="summary_author" placeholder="Nickname (facultative)" />
+      <input type="button" value="Add this summary" onclick="submitSummary()" />
+    </form>
+  </div>
+
 </body>
 </html>

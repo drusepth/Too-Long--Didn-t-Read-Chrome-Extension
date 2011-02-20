@@ -1,17 +1,13 @@
 {
-	"name": "Too Long; Didn't Read",
-	"version": "1.0",
-	"description": "",
-	"background_page": "background.html",
-	"browser_action": 
-	{
-		"default_icon": "tldr_16x16.png",
-		"default_title": "Too Long, Didn't Read",
-		"default_popup": "popup.html"
-	},
-	"permissions": 
-	[
-		"tabs",
-		"http://www.too-long-didnt-read.com/"
-	]
+   "background_page": "background.html",
+   "browser_action": {
+      "default_icon": "t_16x16.png",
+      "default_popup": "popup.html",
+      "default_title": "Too Long, Didn't Read"
+   },
+   "description": "",
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2uRZAvRALlSqQ7YVwArUVGjqqOQeMPQm4b37rie61SuV0WHcykrT9zRAOvZ2h1pt9iT8a3yxlLfvE28utadmM1ZvSMCMgnlUqQEjAIO6l8QhfE9LAbLJufMYniIb04VQAMFHZ7f84sT4YScaQ9vZpm6iwYm/r9KbGwdcuf78WVwIDAQAB",
+   "name": "Too Long; Didn't Read DEV",
+   "permissions": [ "tabs", "http://tldr.dev/" ],
+   "version": "1.0"
 }
