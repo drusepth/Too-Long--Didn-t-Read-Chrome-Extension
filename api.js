@@ -66,6 +66,8 @@ function process_popup()
 	container.innerHTML += "</form>";
 	
 	document.body.appendChild(container);
+	
+	document.getElementById('loading').style.display = 'none';
 }
 
 function process_background()
