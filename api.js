@@ -1,9 +1,11 @@
 var ajax_transport = new XMLHttpRequest();
+var pageURL;
 
 function getSummary(url)
 {
 	chrome.tabs.getSelected(null, function(tab) 
 	{
+		pageURL = tab.url;
 		request("http://www.too-long-didnt-read.com/api/summaries?url=" + tab.url, process_popup);
 	});
 }
@@ -13,6 +15,16 @@ function request(url, handler)
 	ajax_transport.open("GET", url, true);
 	ajax_transport.onreadystatechange = handler;
 	ajax_transport.send(null);
+}
+
+function post(url, data)
+{
+	ajax_transport.open("POST", url, true);
+	ajax_transport.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	ajax_transport.setRequestHeader("Content-length", data.length);
+	ajax_transport.setRequestHeader("Connection", "close");
+	
+	ajax_transport.send(data);
 }
 
 function process_popup()
@@ -58,16 +70,28 @@ function process_popup()
 	
 	container.innerHTML = "";
 	container.innerHTML += "<h1>Submit your own summary:</h1>";
-	container.innerHTML += "<form method='post'>";
-	container.innerHTML += "	<textarea name='summary[content]' value=''></textarea>";
-	container.innerHTML += "	<input type='hidden' name='webpage[url]' id='url' value='' />";
-	container.innerHTML += "	<input type='hidden' name='summary[author]' value='Anonymous' />";
-	container.innerHTML += "	<input type='submit' value='Add' />";
+	container.innerHTML += "<form>";
+	container.innerHTML += "	<textarea name='summary[content]' value='' id='summary'></textarea>";
+	container.innerHTML += "	<input type='hidden' name='webpage[url]' id='' value='" + pageURL + "' />";
+	container.innerHTML += "	<input type='hidden' name='summary[author]' id='author' value='Anonymous' />";
+	container.innerHTML += "	<input type='button' value='Add' onclick='submit_summary()' />";
 	container.innerHTML += "</form>";
 	
 	document.body.appendChild(container);
 	
 	document.getElementById('loading').style.display = 'none';
+}
+
+function submit_summary()
+{
+	var summary = document.getElementById('summary').value;
+	var author  = document.getElementById('author').value;
+	
+	var data = "summary[content]=" + encodeURIComponent(summary)
+		+ "&webpage[url]=" + encodeURIComponent(pageURL)
+		+ "&summary[author]=" + encodeURIComponent(author);
+		
+	post("http://www.too-long-didnt-read.com/api/summaries", data);
 }
 
 function process_background()
