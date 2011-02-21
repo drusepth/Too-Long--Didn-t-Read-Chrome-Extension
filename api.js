@@ -1,6 +1,6 @@
 var pageURL;
-//var tldrURL = "http://www.too-long-didnt-read.com";
-var tldrURL = "http://tldr.dev";
+var tldrURL = "http://www.too-long-didnt-read.com";
+//var tldrURL = "http://tldr.dev";
 
 function loadAndDisplaySummaries(){
   chrome.tabs.getSelected(null, function(tab){
