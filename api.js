@@ -24,7 +24,7 @@ function loadAndDisplaySummaries(){
 
         if(summaries.length == 0){
           // no summaries
-          $("#summaries").html("<p><em>No summaries for this URL (yet!)</em></p>");
+          $("#summaries").html("<p class=\"box\">It seems there aren't any summaries for this page yet. Be the first to write one!</p>");
           return true;
         }
 
@@ -33,7 +33,7 @@ function loadAndDisplaySummaries(){
           var box_summary_string = '<div class="box summary">';
           box_summary_string += '<p class="content">'+summaries[i].content+'</p>';
           if(summaries[i].author == null){
-            box_summary_string += '<p class="about">Anonymous</p>';
+            box_summary_string += '<p class="about">by Anonymous</p>';
           } else {
             box_summary_string += '<p class="about">by '+summaries[i].author+'</p>';
           }

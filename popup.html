@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> 
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> 
   <script type="text/javascript" src="api.js"></script>
   <script type="text/javascript">
     loadAndDisplaySummaries();//(document.location);
@@ -22,11 +22,12 @@
   </div>
 
   <div id="add_box" class="box">
-    <h1>Submit your own summary:</h1>
+    <h2>Submit your own summary for this page:</h2>
     <form>
       <textarea name="summary[content]" id="summary_content" placeholder="Your summary..."></textarea>
-      <input type="text" name="summary[author]" id="summary_author" placeholder="Nickname (facultative)" />
-      <input type="button" value="Add this summary" onclick="submitSummary()" />
+      <label for="summary_author"><img src="twitter.png" /></label>
+	  <input type="text" name="summary[author]" id="summary_author" placeholder="Nickname" />
+      <input type="button" value="Add this summary" onclick="submitSummary()" class="button" />
     </form>
   </div>
 

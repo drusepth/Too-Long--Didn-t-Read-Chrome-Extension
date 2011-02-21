@@ -1,17 +1,30 @@
 * {
 	margin: 0px;
 	padding: 0px;
+	color: #222222;
+	font-family: Helvetica;
+}
+
+a {
+	color: #398999;
+	text-decoration: none;
 }
 
 .about {
+	margin-top: 5px;
 	text-align: right;
 	font-size: 10px;
+}
+
+#add_box {
+  text-align: center;
 }
 
 body {
 	width: 380px;
 	padding: 10px;
 	overflow: auto;
+	background: #ffffff;
 }
 
 .box {
@@ -19,6 +32,13 @@ body {
 	border-bottom: 3px solid #dedede;
 	padding: 5px;
 	border: 1px dotted #dedede;
+	border-radius: 5px;
+	background: #edfcff;
+}
+
+.button {
+	border-radius: 5px;
+	background: #55D8F2;
 }
 
 #loading_box {
@@ -27,21 +47,30 @@ body {
 
 h1 {
 	text-align: center;
-	font-size: 14px;
+	font-size: 18px;
+	font-weight: bold;
 	border-bottom: 1px solid #dedede;
 	padding-bottom: 5px;
 	margin-bottom: 5px;
 }
 
-#add_box {
-  text-align: center;
+h2 {
+	text-align: center;
+	font-size: 14px;
+	border-bottom: 1px solid #dedede;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	color: #398999;
 }
 
 input {
-	display: block;
 	margin-bottom: 5px;
-	width: 98%;
+	width: 45%;
 	padding: 2px;
+}
+
+p {
+	
 }
 
 textarea {
