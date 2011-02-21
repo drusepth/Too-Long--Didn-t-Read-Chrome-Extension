@@ -31,7 +31,7 @@ function loadAndDisplaySummaries(){
         // run through the array to show the summaries
         for(var i = 0; i < summaries.length; i++){
           var box_summary_string = '<div class="box summary">';
-          box_summary_string += '<p class="content">'+summaries[i].content+'</p>';
+          box_summary_string += '<p class="content">'+summaries[i].content.replace(/\n/g,'<br />')+'</p>';
           if(summaries[i].author == null){
             box_summary_string += '<p class="about">Anonymous</p>';
           } else {
