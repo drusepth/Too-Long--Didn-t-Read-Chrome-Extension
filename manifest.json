@@ -9,5 +9,9 @@
    "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2uRZAvRALlSqQ7YVwArUVGjqqOQeMPQm4b37rie61SuV0WHcykrT9zRAOvZ2h1pt9iT8a3yxlLfvE28utadmM1ZvSMCMgnlUqQEjAIO6l8QhfE9LAbLJufMYniIb04VQAMFHZ7f84sT4YScaQ9vZpm6iwYm/r9KbGwdcuf78WVwIDAQAB",
    "name": "Too Long; Didn't Read",
    "permissions": [ "tabs", "http://www.too-long-didnt-read.com/" ],
-   "version": "1.0"
+   "version": "1.0",
+   "icons": { 
+      "16": "t_16x16.png",
+      "48": "t_48x48.png"
+   }
 }
